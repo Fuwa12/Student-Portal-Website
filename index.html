@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portal - Space Theme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    /* (same CSS as before, no changes needed) */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+      background: radial-gradient(ellipse at bottom, #05031a 0%, #000000 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: #ffffff;
+    }
+
+    .stars {
+      width: 2px;
+      height: 2px;
+      background: white;
+      position: absolute;
+      animation: starMove 50s linear infinite;
+      box-shadow: 
+        500px 200px white,
+        1000px 800px white,
+        1500px 1200px white,
+        200px 400px white,
+        1200px 500px white,
+        300px 1300px white,
+        800px 100px white,
+        1700px 700px white,
+        600px 900px white,
+        900px 400px white;
+    }
+
+    @keyframes starMove {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-2000px);
+      }
+    }
+
+    .nebula {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0,255,255,0.15) 0%, rgba(0,0,0,0) 70%);
+      opacity: 0.3;
+      animation: nebulaFloat 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes nebulaFloat {
+      from {
+        transform: translate(0, 0) scale(1);
+      }
+      to {
+        transform: translate(50px, 50px) scale(1.2);
+      }
+    }
+
+    .login-container {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #00f0ff;
+      width: 320px;
+      text-align: center;
+      z-index: 10;
+      animation: fadeIn 2s ease;
+    }
+
+    .login-container h2 {
+      margin-bottom: 10px;
+      color: #00f0ff;
+      font-size: 26px;
+    }
+
+    .login-container p {
+      font-size: 13px;
+      margin-bottom: 25px;
+      color: #aaa;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: black;
+      border: 2px solid #00f0ff;
+      border-radius: 8px;
+      color: #00f0ff;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .login-container input:focus {
+      border-color: #ffffff;
+      outline: none;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: #00f0ff;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s ease;
+      font-size: 15px;
+    }
+
+    .login-container button:hover {
+      background: #00b0cc;
+    }
+
+    .register-button {
+      width: 100%;
+      padding: 12px;
+      background: #00b0cc;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s ease;
+      font-size: 15px;
+    }
+
+    .register-button:hover {
+      background: #00f0ff;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="nebula"></div>
+
+  <div class="login-container">
+    <h2>Student Portal</h2>
+    <p>Welcome, student. Enter your credentials.</p>
+    <form onsubmit="event.preventDefault(); window.location.href='http://localhost/justine/navigation.html';">
+      <input type="text" placeholder="Student ID" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Enter Portal</button>
+      <button type="button" class="register-button" onclick="window.location.href='http://localhost/justine/student_form.php'">Register</button>
+    </form>
+  </div>
+</body>
+</html>
